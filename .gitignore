@@ -1,0 +1,34 @@
+# Simulation output
+*.vcd
+*.fst
+*.lxt
+*.wlf
+
+# Compiled simulation files
+*.out
+*.exe
+simv
+simv.daidir
+csrc/
+
+# Tool-specific files
+*.log
+*.key
+*.jou
+*.swp
+*.swo
+*.tmp
+
+# Coverage databases
+*.ucdb
+*.cov
+
+# Editor files
+.vscode/
+.idea/
+*.bak
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
