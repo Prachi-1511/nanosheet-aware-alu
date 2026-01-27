@@ -21,3 +21,9 @@
 - Design is synthesizable and suitable as a reusable RTL IP block.
 
 Status: ALU core complete. Verification to be added next.
+
+Day 3:
+- Developed self-checking testbench for ALU
+- Verified ADD/SUB overflow edge cases
+- Validated logical and shift operations
+- Implemented reusable verification task
