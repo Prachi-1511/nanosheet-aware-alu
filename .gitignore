@@ -3,6 +3,7 @@
 *.fst
 *.lxt
 *.wlf
+*.vvp
 
 # Compiled simulation files
 *.out
@@ -10,6 +11,7 @@
 simv
 simv.daidir
 csrc/
+alu_sim
 
 # Tool-specific files
 *.log

@@ -37,6 +37,9 @@ These assumptions are reflected through configurable RTL parameters rather than 
 ## Current Status
 Initial project setup and architecture definition are complete.  
 RTL module development and verification are in progress.
+Supported operations table
+Flags behavior description
+Simulation instructions
 
 ## Future Scope
 - Synthesis and timing analysis using standard EDA flows

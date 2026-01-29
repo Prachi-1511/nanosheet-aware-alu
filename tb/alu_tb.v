@@ -1,5 +1,4 @@
 `timescale 1ns/1ps
-`include "alu.v"
 
 module alu_tb;
 
@@ -67,7 +66,7 @@ module alu_tb;
         check(30, 0, 0, 1, 0);
 
         // SUB overflow
-        a = 32'sd-2147483648; b = 1;
+        a = -2147483648; b = 1;
         check(32'h7FFFFFFF, 0, 0, 1, 1);
 
         // AND
@@ -77,7 +76,8 @@ module alu_tb;
 
         // OR
         alu_ctrl = 3'b011;
-        check(32'hFFF0, 0, 1, 0, 0);
+        a = 32'hF0F0; b = 32'h0FF0;
+        check(32'hFFF0, 0, 0, 0, 0);
 
         // Shift Left
         alu_ctrl = 3'b100;
@@ -91,6 +91,12 @@ module alu_tb;
 
         $display("---- ALU TEST END ----");
         $finish;
+    end
+
+    // Dump waveform
+    initial begin
+        $dumpfile("alu_ex.vcd");
+        $dumpvars(0, alu_tb);
     end
 
 endmodule

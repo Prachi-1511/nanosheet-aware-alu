@@ -22,8 +22,11 @@
 
 Status: ALU core complete. Verification to be added next.
 
-Day 3:
+## Day 3:
 - Developed self-checking testbench for ALU
 - Verified ADD/SUB overflow edge cases
 - Validated logical and shift operations
 - Implemented reusable verification task
+
+## Day 4 – Functional Verification
+Verified ALU operations using waveform analysis. Confirmed correct flag behavior for signed overflow, negative results, and shift operations.
