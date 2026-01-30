@@ -45,3 +45,16 @@ Simulation instructions
 - Synthesis and timing analysis using standard EDA flows
 - Parameter exploration for performance and power trade-offs
 - Extension toward backend-aware design constraints
+
+## Simulation & Verification
+
+The following GTKWave snapshot demonstrates functional verification of the
+RTL-based ALU. Multiple operations are applied sequentially through the
+testbench, and the waveform confirms correct behavior of:
+
+- Arithmetic operations (ADD, SUB)
+- Logical operations (OR)
+- Shift operations
+- Status flags: Zero, Negative, Carry, Overflow
+
+![ALU Verification Waveform](docs/waveforms/alu_full_verification.png)
