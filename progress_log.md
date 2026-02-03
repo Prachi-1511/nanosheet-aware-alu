@@ -31,13 +31,22 @@ Status: ALU core complete. Verification to be added next.
 ## Day 4 – Functional Verification
 Verified ALU operations using waveform analysis. Confirmed correct flag behavior for signed overflow, negative results, and shift operations.
 
-## Day 5 – Execution Unit Planning (FSM & Control)
+## Day 5 – ALU Control Unit Design
 
-Defined the next phase of the project by extending the verified ALU
-into an FSM-controlled execution unit.
 Implemented a dedicated ALU control module to decode instruction opcodes
 into ALU operation select signals.
 
-- Finalized opcode mapping for arithmetic, logical, and shift operations
-- Designed a 3-state FSM (IDLE → EXECUTE → DONE) for operation sequencing
-- Established control–datapath separation between FSM, ALU control, and ALU
+- Designed combinational opcode-to-operation decoding logic
+- Used parameterized opcode width for scalability
+- Ensured safe synthesis with complete case coverage and default handling
+- Established clean separation between control logic and datapath (ALU)
+
+## Day 6 – FSM-Based Execution Control
+
+Designed and implemented a clocked finite state machine (FSM) to control
+the execution flow of the ALU-based execution unit.
+
+- Implemented a 3-state Moore FSM (IDLE, EXECUTE, DONE)
+- Separated state register, next-state logic, and output logic
+- Generated execution enable and completion signals
+- Established timing control independent of datapath computation
