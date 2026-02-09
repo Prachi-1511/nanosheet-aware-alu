@@ -50,3 +50,8 @@ the execution flow of the ALU-based execution unit.
 - Separated state register, next-state logic, and output logic
 - Generated execution enable and completion signals
 - Established timing control independent of datapath computation
+
+## Day 7 - FSM-Based ALU control
+-Implemented FSM-based ALU control unit with processor-style states (IDLE, LOAD_OP, EXECUTE, WRITEBACK, DONE). 
+-Separated state register, next-state logic, and output logic following industry FSM design practices. 
+-FSM generates ALU enable, operation select, and valid signals for controlled execution.
