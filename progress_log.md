@@ -55,3 +55,8 @@ the execution flow of the ALU-based execution unit.
 -Implemented FSM-based ALU control unit with processor-style states (IDLE, LOAD_OP, EXECUTE, WRITEBACK, DONE). 
 -Separated state register, next-state logic, and output logic following industry FSM design practices. 
 -FSM generates ALU enable, operation select, and valid signals for controlled execution.
+
+## Day 8 - Verify FSM controller
+-Developed a dedicated Verilog testbench for the FSM-based ALU controller.
+-Verified correct state sequencing and control signal timing using GTKWave waveform analysis. 
+-Confirmed synchronous operation and clean reset/start behavior.

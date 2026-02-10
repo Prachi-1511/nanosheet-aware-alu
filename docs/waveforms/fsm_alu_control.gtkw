@@ -1,0 +1,41 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Tue Feb 10 19:27:08 2026
+[*]
+[dumpfile] "F:\verilog project\nanosheet-aware-alu\docs\waveforms\fsm_out.vcd"
+[savefile] "F:\verilog project\nanosheet-aware-alu\docs\waveforms\fsm_alu_control.gtkw"
+[timestart] 0
+[size] 1366 705
+[pos] -35 -35
+*-14.611039 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] fsm_alu_ctrl_tb.
+[sst_width] 197
+[signals_width] 150
+[sst_expanded] 1
+[sst_vpaned_height] 190
+@28
+fsm_alu_ctrl_tb.dut.clk
+fsm_alu_ctrl_tb.dut.rst
+fsm_alu_ctrl_tb.dut.start
+@c00028
+fsm_alu_ctrl_tb.dut.curr_state[2:0]
+@28
+(0)fsm_alu_ctrl_tb.dut.curr_state[2:0]
+(1)fsm_alu_ctrl_tb.dut.curr_state[2:0]
+(2)fsm_alu_ctrl_tb.dut.curr_state[2:0]
+@1401200
+-group_end
+@c00028
+fsm_alu_ctrl_tb.dut.next_state[2:0]
+@28
+(0)fsm_alu_ctrl_tb.dut.next_state[2:0]
+(1)fsm_alu_ctrl_tb.dut.next_state[2:0]
+(2)fsm_alu_ctrl_tb.dut.next_state[2:0]
+@1401200
+-group_end
+@28
+fsm_alu_ctrl_tb.dut.alu_en
+fsm_alu_ctrl_tb.dut.alu_op[3:0]
+fsm_alu_ctrl_tb.dut.valid
+[pattern_trace] 1
+[pattern_trace] 0
