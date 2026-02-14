@@ -60,3 +60,8 @@ the execution flow of the ALU-based execution unit.
 -Developed a dedicated Verilog testbench for the FSM-based ALU controller.
 -Verified correct state sequencing and control signal timing using GTKWave waveform analysis. 
 -Confirmed synchronous operation and clean reset/start behavior.
+
+## Day 9: Upgraded FSM controller 
+-Upgraded FSM controller to full pipeline-ready version with
+registered outputs and ready/valid handshake support.
+-Verified stall-safe behavior using waveform analysis.

@@ -6,6 +6,7 @@ module fsm_alu_ctrl_tb;
     reg rst;
     reg start;
     reg [3:0] op_in;
+    reg ready;
 
     wire alu_en;
     wire [3:0] alu_op;
@@ -17,6 +18,7 @@ module fsm_alu_ctrl_tb;
         .rst(rst),
         .start(start),
         .op_in(op_in),
+        .ready(ready),
         .alu_en(alu_en),
         .alu_op(alu_op),
         .valid(valid)
@@ -35,6 +37,9 @@ module fsm_alu_ctrl_tb;
         rst   = 1;
         start = 0;
         op_in = 4'b0010;  // Example: ADD
+        ready = 0;
+        #50 ready = 1;
+
 
         // Reset pulse
         #10 rst = 0;

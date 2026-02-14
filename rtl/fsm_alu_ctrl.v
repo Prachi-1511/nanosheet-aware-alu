@@ -3,6 +3,7 @@ module fsm_alu_ctrl (
     input  wire        rst,
     input  wire        start,
     input  wire [3:0]  op_in,
+    input  wire        ready,
     output reg         alu_en,
     output reg  [3:0]  alu_op,
     output reg         valid
@@ -33,29 +34,47 @@ module fsm_alu_ctrl (
             IDLE:      if (start) next_state = LOAD_OP;
             LOAD_OP:   next_state = EXECUTE;
             EXECUTE:   next_state = WRITEBACK;
-            WRITEBACK: next_state = DONE;
+            WRITEBACK: begin
+                if (ready)
+                    next_state = DONE;
+                else
+                    next_state = WRITEBACK;
+            end
+            
             DONE:      next_state = IDLE;
             default:   next_state = IDLE;
         endcase
     end
 
-    // Output logic (FIXING YOUR GAP)
-    always @(*) begin
-        alu_en  = 0;
-        alu_op  = 0;
-        valid   = 0;
+    // Output logic
+    // ALU operation register
+    always @(posedge clk or posedge rst) begin
+        if (rst)
+            alu_op <= 0;
+        else if (curr_state == LOAD_OP)
+            alu_op <= op_in;
+    end
 
-        case (curr_state)
-            LOAD_OP: begin
-                alu_op = op_in;
-            end
-            EXECUTE: begin
-                alu_en = 1;
-            end
-            WRITEBACK: begin
-                valid = 1;
-            end
-        endcase
+
+// ALU enable (registered)
+    always @(posedge clk or posedge rst) begin
+        if (rst)
+            alu_en <= 0;
+        else if (curr_state == EXECUTE)
+            alu_en <= 1;
+        else
+            alu_en <= 0;
+    end
+
+
+// Valid signal (stall-safe)
+    always @(posedge clk or posedge rst) begin
+        if (rst)
+            valid <= 0;
+        else if (curr_state == WRITEBACK)
+            valid <= 1;
+        else if (valid && ready)
+            valid <= 0;
     end
 
 endmodule
